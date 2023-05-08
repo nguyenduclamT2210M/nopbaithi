@@ -70,35 +70,36 @@ public class Customer {
 
                     System.out.print("My choice is: ");
                     this.or = input.nextInt();
-                    while (or != 1 || or != 2)
+                    while (or == 1 || or == 2)
                     {
                         System.out.print("My choice is: ");
                         or = input.nextInt();
-                    }
-                    if(or == 1 ){
-                    System.out.print("So you want to move: ");
-                    int mony = input.nextInt();
-
-                    if (mony > ammout){
-                        System.out.println("Your earphone is not used for transactions");
-
-                        while (mony>ammout){
+                        if(or == 1 ){
                             System.out.print("So you want to move: ");
-                            mony = input.nextInt();
+                            int mony = input.nextInt();
+
+                            if (mony > ammout){
+                                System.out.println("Your earphone is not used for transactions");
+
+                                while (mony>ammout){
+                                    System.out.print("So you want to move: ");
+                                    mony = input.nextInt();
+                                }
+                            }else{
+                                System.out.println("Bar trading");
+                                int hieu = (int) (ammout - mony);
+                                System.out.println("Account balance is: "+hieu);
+                            }
+
+
+                        }else if ( or == 2 ){
+
+                            System.out.print("First you want to nap: ");
+                            int a = input.nextInt();
+                            int tong = (int) (a + ammout);
+                            System.out.println("Account balance is: "+tong);
+
                         }
-                    }else{
-                        System.out.println("Bar trading");
-                        int hieu = (int) (ammout - mony);
-                        System.out.println("Account balance is: "+hieu);
-                    }
-
-
-                    }else if ( or == 2 ){
-
-                        System.out.print("First you want to nap: ");
-                        int a = input.nextInt();
-                        int tong = (int) (a + ammout);
-                        System.out.println("Account balance is: "+tong);
 
                     }
 
